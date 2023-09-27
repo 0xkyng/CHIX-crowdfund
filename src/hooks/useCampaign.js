@@ -12,11 +12,11 @@ const useCampaign = () => {
   const provider = new ethers.BrowserProvider(window.ethereum)
 
   const { isActive } = useConnection();
-  const crowFundContract = new Contract(campaignCA, abi, provider)
+  const campaignContract = new Contract(campaignCA, abi, provider)
 
   const getCampaignCount = async () => {
     try {
-      const result = await crowFundContract.id();
+      const result = await campaignContract.id();
       return ethers.formatUnits(result, 0);
     } catch (error) {
 
@@ -24,12 +24,12 @@ const useCampaign = () => {
   }
   const getCampaigns = async (count) => {
     try {
-      const d = [];
+      const a = [];
       for (let index = 1; index <= count[0]; index++) {
-        const result = await crowFundContract.crowd(index);
-        d.push(result)
+        const result = await campaignContract.crowd(index);
+        a.push(result)
       }
-      return d;
+      return a;
     } catch (error) {
     }
   }

@@ -19,10 +19,10 @@ const ShowCampaign = () => {
           <p className="text-2xl font-semibold">
             Owner: <span className="text-red-500 text-sm">{item[2]}</span>
           </p>
-          <p>Funding Goal: {item[1].toString()} ETH</p>
+          <p>Goal: {item[1].toString()} ETH</p>
           <p>Duration Time: {item[3].toString()} seconds</p>
           <p>Is Active: {item[4] ? "Yes" : "No"}</p>
-          <p>Funding Balance: {item[5].toString()} ETH</p>
+          <p>Balance: {item[5].toString()} ETH</p>
         </div>
       ))}
     </div>
